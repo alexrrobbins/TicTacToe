@@ -12,15 +12,15 @@ def printBoard(board):
     print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
     print('-+-+-')
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
-printBoard(theBoard)
 
 
-turn = 'X' #sets the turn
-print('It is now ' + turn + "'s turn. Move on which space?")
-move = input()
-theBoard[move] = turn
-if turn == 'X':
-    turn = 'O'
-else:
-    turn = 'X'
+for num in range(1:9):
+    if turn == 'X':
+        turn = 'O'
+    else:
+        turn = 'X'
+    print('It is now ' + turn + "'s turn. Move on which space?")
+    move = input()
+    theBoard[move] = turn
+
 printBoard(theBoard)
