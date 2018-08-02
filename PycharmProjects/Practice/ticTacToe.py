@@ -14,5 +14,8 @@ def printBoard(board):
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 printBoard(theBoard)
 
-global turn = 'X' #sets the turn
+
+turn = 'X' #sets the turn
 print('It is now ' + turn + "'s turn. Move on which space?")
+move = input()
+theBoard[move] = turn
