@@ -14,7 +14,7 @@ def printBoard(board):
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 
 
-for num in range(1:9):
+for num in range(1,9):
     if turn == 'X':
         turn = 'O'
     else:
