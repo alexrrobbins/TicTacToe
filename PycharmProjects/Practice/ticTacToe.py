@@ -21,6 +21,9 @@ for num in range(1:9):
         turn = 'X'
     print('It is now ' + turn + "'s turn. Move on which space?")
     move = input()
-    theBoard[move] = turn
-
-printBoard(theBoard)
+    if theBoard[move] == ('X' or 'O'):
+        print('Invalid move')
+        continue
+    else:
+        theBoard[move] = turn
+    printBoard(theBoard)
