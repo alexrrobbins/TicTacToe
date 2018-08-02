@@ -1,5 +1,7 @@
 #This program represents a tic-tac-toe game
 
+import sys
+
 #Initializes empty board
 theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
             'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',
@@ -14,7 +16,7 @@ def printBoard(board):
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 
 
-for num in range(1,9):
+for num in range(int(sys.maxsize)):
     if num%2 == 0:
         turn = 'O'
     else:
