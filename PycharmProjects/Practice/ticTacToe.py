@@ -19,3 +19,8 @@ turn = 'X' #sets the turn
 print('It is now ' + turn + "'s turn. Move on which space?")
 move = input()
 theBoard[move] = turn
+if turn == 'X':
+    turn = 'O'
+else:
+    turn = 'X'
+printBoard(theBoard)
