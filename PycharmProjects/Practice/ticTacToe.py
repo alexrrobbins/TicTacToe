@@ -29,7 +29,5 @@ for num in range(int(sys.maxsize)):
     else:
         theBoard[move] = turn
     printBoard(theBoard)
-    if ' ' in theBoard.items():
-        continue
-    else:
+    if ' ' not in theBoard.items():
         break
