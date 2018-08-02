@@ -48,5 +48,12 @@ for num in range(int(sys.maxsize)):
     else:
         theBoard[move] = turn
     printBoard(theBoard)
-    if ' ' not in theBoard.values():
+    if conditionO1 or conditionO2 or conditionO3 or conditionO4 or conditionO5 or conditionO6 or conditionO7 or conditionO8:
+        print('O is the winner!')
+        break
+    elif conditionX1 or conditionX2 or conditionX3 or conditionX4 or conditionX5 or conditionX6 or conditionX7 or conditionX8:
+        print('X is the winner!')
+        break
+    elif ' ' not in theBoard.values():
+        print('The game is tied.')
         break
