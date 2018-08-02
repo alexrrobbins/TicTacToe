@@ -15,25 +15,26 @@ def printBoard(board):
     print('-+-+-')
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 
-#Sets the conditions for X winning
-conditionX1 = theBoard['top-L'] == theBoard['top-M'] == theBoard['top-R'] == 'X'
-conditionX2 = theBoard['mid-L'] == theBoard['mid-M'] == theBoard['mid-R'] == 'X'
-conditionX3 = theBoard['low-L'] == theBoard['low-M'] == theBoard['low-R'] == 'X'
-conditionX4 = theBoard['top-L'] == theBoard['mid-M'] == theBoard['low-R'] == 'X'
-conditionX5 = theBoard['top-R'] == theBoard['mid-M'] == theBoard['low-L'] == 'X'
-conditionX6 = theBoard['top-L'] == theBoard['mid-L'] == theBoard['low-L'] == 'X'
-conditionX7 = theBoard['top-M'] == theBoard['mid-M'] == theBoard['low-M'] == 'X'
-conditionX8 = theBoard['top-R'] == theBoard['mid-R'] == theBoard['low-R'] == 'X'
+def setConditions(theBoard):
+    conditionX1 = theBoard['top-L'] == theBoard['top-M'] == theBoard['top-R'] == 'X'
+    conditionX2 = theBoard['mid-L'] == theBoard['mid-M'] == theBoard['mid-R'] == 'X'
+    conditionX3 = theBoard['low-L'] == theBoard['low-M'] == theBoard['low-R'] == 'X'
+    conditionX4 = theBoard['top-L'] == theBoard['mid-M'] == theBoard['low-R'] == 'X'
+    conditionX5 = theBoard['top-R'] == theBoard['mid-M'] == theBoard['low-L'] == 'X'
+    conditionX6 = theBoard['top-L'] == theBoard['mid-L'] == theBoard['low-L'] == 'X'
+    conditionX7 = theBoard['top-M'] == theBoard['mid-M'] == theBoard['low-M'] == 'X'
+    conditionX8 = theBoard['top-R'] == theBoard['mid-R'] == theBoard['low-R'] == 'X'
 
-#Sets the conditions for O winning
-conditionO1 = theBoard['top-L'] == theBoard['top-M'] == theBoard['top-R'] == 'O'
-conditionO2 = theBoard['mid-L'] == theBoard['mid-M'] == theBoard['mid-R'] == 'O'
-conditionO3 = theBoard['low-L'] == theBoard['low-M'] == theBoard['low-R'] == 'O'
-conditionO4 = theBoard['top-L'] == theBoard['mid-M'] == theBoard['low-R'] == 'O'
-conditionO5 = theBoard['top-R'] == theBoard['mid-M'] == theBoard['low-L'] == 'O'
-conditionO6 = theBoard['top-L'] == theBoard['mid-L'] == theBoard['low-L'] == 'O'
-conditionO7 = theBoard['top-M'] == theBoard['mid-M'] == theBoard['low-M'] == 'O'
-conditionO8 = theBoard['top-R'] == theBoard['mid-R'] == theBoard['low-R'] == 'O'
+    conditionO1 = theBoard['top-L'] == theBoard['top-M'] == theBoard['top-R'] == 'O'
+    conditionO2 = theBoard['mid-L'] == theBoard['mid-M'] == theBoard['mid-R'] == 'O'
+    conditionO3 = theBoard['low-L'] == theBoard['low-M'] == theBoard['low-R'] == 'O'
+    conditionO4 = theBoard['top-L'] == theBoard['mid-M'] == theBoard['low-R'] == 'O'
+    conditionO5 = theBoard['top-R'] == theBoard['mid-M'] == theBoard['low-L'] == 'O'
+    conditionO6 = theBoard['top-L'] == theBoard['mid-L'] == theBoard['low-L'] == 'O'
+    conditionO7 = theBoard['top-M'] == theBoard['mid-M'] == theBoard['low-M'] == 'O'
+    conditionO8 = theBoard['top-R'] == theBoard['mid-R'] == theBoard['low-R'] == 'O'
+    return [conditionX1, conditionX2, conditionX3, conditionX4, conditionX5, conditionX6, conditionX7, conditionX8,
+            conditionO1, conditionO2, conditionO3, conditionO4, conditionO5, conditionO6, conditionO7, conditionO8]
 
 for num in range(int(sys.maxsize)):
     if num%2 == 0:
@@ -48,11 +49,15 @@ for num in range(int(sys.maxsize)):
     else:
         theBoard[move] = turn
     printBoard(theBoard)
-    if conditionO1 or conditionO2 or conditionO3 or conditionO4 or conditionO5 or conditionO6 or conditionO7 or conditionO8:
-        print('O is the winner!')
-        break
-    elif conditionX1 or conditionX2 or conditionX3 or conditionX4 or conditionX5 or conditionX6 or conditionX7 or conditionX8:
+
+    c = []
+    c = setConditions(theBoard)
+
+    if c[0] or c[1] or c[2] or c[3] or c[4] or c[5] or c[6] or c[7]:
         print('X is the winner!')
+        break
+    elif c[8] or c[9] or c[10] or c[11] or c[12] or c[13] or c[14] or c[15]:
+        print('O is the winner!')
         break
     elif ' ' not in theBoard.values():
         print('The game is tied.')
