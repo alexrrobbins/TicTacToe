@@ -29,5 +29,5 @@ for num in range(int(sys.maxsize)):
     else:
         theBoard[move] = turn
     printBoard(theBoard)
-    if ' ' not in theBoard.items():
+    if ' ' not in theBoard.values():
         break
