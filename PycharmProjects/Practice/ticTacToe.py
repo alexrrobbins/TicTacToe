@@ -27,3 +27,7 @@ for num in range(1,9):
     else:
         theBoard[move] = turn
     printBoard(theBoard)
+    if ' ' in theBoard.items():
+        continue
+    else:
+        break
