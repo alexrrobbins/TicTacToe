@@ -15,7 +15,7 @@ def printBoard(board):
 
 
 for num in range(1,9):
-    if turn == 'X':
+    if num%2 == 0:
         turn = 'O'
     else:
         turn = 'X'
