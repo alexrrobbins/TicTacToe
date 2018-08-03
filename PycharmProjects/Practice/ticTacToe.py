@@ -1,4 +1,6 @@
-# This program represents a tic-tac-toe game
+""" This program represents a tic-tac-toe game
+Written by Alex Robbins alexrrobbins@gmail.com
+"""
 
 import sys
 
@@ -76,9 +78,9 @@ for num in range(int(sys.maxsize)):
     # Prints the board after every move
     printBoard(theBoard)
 
-    # Resets conditions after every move to check if any are met
-    # Passes the state of the "board" to the function which sets the conditions as boolean values
-    # The function returns the booleans in a list so they can be used in the next if-elif statements
+    """Resets conditions after every move to check if any are met
+     Passes the state of the "board" to the function which sets the conditions as boolean values
+     The function returns the booleans in a list so they can be used in the next if-elif statements"""
     c = setConditions(theBoard)
 
     # Checks each returned boolean from the list above to see if any conditions are met.
