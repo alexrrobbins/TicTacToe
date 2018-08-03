@@ -2,11 +2,13 @@
 
 import sys
 
-print('Welcome to tic-tac-toe!')
-print("Rules: Three X's or O's in any direction wins the game.")
-print("An invalid move will result in a skipped turn, so be careful!")
-print("Below is a diagram of the board. Type in the spot where you want to place your letter to make your move.")
-print(' ')
+print('''Welcome to tic-tac-toe!
+Rules: Three X's or O's in any direction wins the game.
+An invalid move will result in a skipped turn, so be careful!
+Below is a diagram of the board. Type in the spot where you want to place your letter to make your move.
+
+''')
+
 print('top-L | top-M | top-R')
 print('______|_______|______')
 print('mid-L | mid-M | mid-R')
